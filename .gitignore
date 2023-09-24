@@ -1,0 +1,3 @@
+# ignoring specific directory
+node_modules/
+.env
