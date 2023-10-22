@@ -6,12 +6,12 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "iPhone 11",
-    "price": 1200
+    "name": "iPhone 14 Pro",
+    "price": 1500
 }
 
 ### GET a product by id
-GET http://localhost:3000/products/id
+GET http://localhost:3000/products/6534e3cb83ef0988d15541fa
 
 ### Update a product by id
 PATCH http://localhost:3000/products/id

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../Models/Product.model');
 
+// Get a list of all products
 router.get('/', async (req,res,next) => {
     try {
         const result = await Product.find({},{ __v: 0});
@@ -11,6 +12,7 @@ router.get('/', async (req,res,next) => {
     }
 });
 
+// Create a product
 router.post('/', async (req,res) => {
     try {
         const product = new Product(req.body);
@@ -21,8 +23,14 @@ router.post('/', async (req,res) => {
     }
 });
 
-router.get('/:id', (req,res) => {
-    res.send('getting a single product');
+// GET a product by id
+router.get('/:id', async (req,res) => {
+    try {
+        const result = await Product.findById({_id: req.params.id},{ __v: 0});
+        res.send(result);
+    } catch (error) {
+        console.log(error.message);
+    }
 });
 
 router.patch('/:id', (req,res) => {
