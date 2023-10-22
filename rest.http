@@ -6,18 +6,18 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "iPhone 14 Pro",
-    "price": 1500
+    "name": "MacBook Air",
+    "price": 2100
 }
 
 ### GET a product by id
-GET http://localhost:3000/products/6534e3cb83ef0988d15541fa
+GET http://localhost:3000/products/65354690c3d796ed656df8cb
 
 ### Update a product by id
 PATCH http://localhost:3000/products/id
 
 ### Delete a product by id
-DELETE  http://localhost:3000/products/id
+DELETE  http://localhost:3000/products/653516a5685bec8317e18386
 
 ### 404 route not found
 GET http://localhost:3000/abc_acd
