@@ -1,13 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const Product = require('../Models/Product.model');
 
 router.get('/', (req,res,next) => {
     res.send('getting a list of all products');
     // next(new Error('Cannot get a list of all products'));
 });
 
-router.post('/', (req,res) => {
-    res.send('products crated');
+router.post('/', async (req,res) => {
+    try {
+        const product = new Product(req.body);
+        const result = await product.save();
+        res.send(result);
+    } catch (error) {
+        console.log(error.message);
+    }
 });
 
 router.get('/:id', (req,res) => {

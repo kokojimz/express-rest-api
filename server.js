@@ -28,7 +28,7 @@ mongoose
         console.log('Mongodb connected...');
 });
 
-
+//test
 app.all('/test',(req,res) => {
     // console.log(req.query);
     // res.send(req.query);
