@@ -11,6 +11,10 @@ const dbHost = process.env.DB_URL;
 const dbName = process.env.DB_NAME;
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 mongoose
     .connect(dbHost,{
         dbName: dbName,
@@ -24,9 +28,21 @@ mongoose
         console.log('Mongodb connected...');
 });
 
+
+app.all('/test',(req,res) => {
+    // console.log(req.query);
+    // res.send(req.query);
+    // console.log(req.query.name);
+    // console.log(req.params);
+    // res.send(req.params);
+    console.log(req.body);
+    res.send(req.body);
+});
+
 const ProductRoute = require('./Routes/product.route');
 app.use('/products',ProductRoute);
 
+//404 handler and pass to error handler
 app.use((req,res,next) => {
     const err = new Error("Not Found");
     err.status = 404;
