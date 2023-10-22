@@ -14,7 +14,13 @@ Content-Type: application/json
 GET http://localhost:3000/products/65354690c3d796ed656df8cb
 
 ### Update a product by id
-PATCH http://localhost:3000/products/id
+PATCH http://localhost:3000/products/65354690c3d796ed656df8cb
+Content-Type: application/json
+
+{
+    "name": "New MacBook Air",
+    "price": 2299
+}
 
 ### Delete a product by id
 DELETE  http://localhost:3000/products/653516a5685bec8317e18386

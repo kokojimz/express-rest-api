@@ -33,8 +33,18 @@ router.get('/:id', async (req,res) => {
     }
 });
 
-router.patch('/:id', (req,res) => {
-    res.send('updating a single product');
+// Update a product by id
+router.patch('/:id', async (req,res) => {
+    try {
+        const id = req.params.id;
+        const updates = req.body;
+        const options = {new: true};
+
+        const result = await Product.findByIdAndUpdate(id,updates,options);
+        res.send(result);
+    } catch (error) {
+        console.log(error.message);
+    }
 });
 
 // Delete a product by id
