@@ -6,24 +6,24 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "MacBook Air",
-    "price": 2100
-}
-
-### GET a product by id
-GET http://localhost:3000/products/65354690c3d796ed656df8cb
-
-### Update a product by id
-PATCH http://localhost:3000/products/65354690c3d796ed656df8cb
-Content-Type: application/json
-
-{
-    "name": "New MacBook Air",
+    "name": "iPad pro",
     "price": 2299
 }
 
+### GET a product by id
+GET http://localhost:3000/products/653926576a286bc515f7b490
+
+### Update a product by id
+PATCH http://localhost:3000/products/6534e4b5706856dad3c3cc71
+Content-Type: application/json
+
+{
+    "name": "iPhone 12 Pro Max",
+    "price": 1499
+}
+
 ### Delete a product by id
-DELETE  http://localhost:3000/products/653516a5685bec8317e18386
+DELETE  http://localhost:3000/products/6534e06d852359dbed44316a
 
 ### 404 route not found
 GET http://localhost:3000/abc_acd

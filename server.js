@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const mongoose = require('mongoose');
+const createError = require('http-errors');
 
 
 // Access variables
@@ -44,9 +45,7 @@ app.use('/products',ProductRoute);
 
 //404 handler and pass to error handler
 app.use((req,res,next) => {
-    const err = new Error("Not Found");
-    err.status = 404;
-    next(err);
+    next(createError(404,'Not found'));
 });
 
 //Error handler
