@@ -6,24 +6,23 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "iPad pro",
-    "price": 2299
+    "name": "iPad Mini",
+    "price": 1299
 }
 
 ### GET a product by id
-GET http://localhost:3000/products/653926576a286bc515f7b490
+GET http://localhost:3000/products/6539476109e13c17db650a63
 
 ### Update a product by id
-PATCH http://localhost:3000/products/6534e4b5706856dad3c3cc71
+PATCH http://localhost:3000/products/6539476109e13c17db650a63
 Content-Type: application/json
 
 {
-    "name": "iPhone 12 Pro Max",
-    "price": 1499
+    "price": 1099
 }
 
 ### Delete a product by id
-DELETE  http://localhost:3000/products/6534e06d852359dbed44316a
+DELETE  http://localhost:3000/products/6539476109e13c17db650a63
 
 ### 404 route not found
 GET http://localhost:3000/abc_acd
