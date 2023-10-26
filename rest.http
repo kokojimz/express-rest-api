@@ -11,10 +11,10 @@ Content-Type: application/json
 }
 
 ### GET a product by id
-GET http://localhost:3000/products/6539476109e13c17db650a63
+GET http://localhost:3000/products/6539c076c7758be6318c50cf
 
 ### Update a product by id
-PATCH http://localhost:3000/products/6539476109e13c17db650a63
+PATCH http://localhost:3000/products/6539c076c7758be6318c50cf
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### Delete a product by id
-DELETE  http://localhost:3000/products/6539476109e13c17db650a63
+DELETE  http://localhost:3000/products/6539c076c7758be6318c50cf
 
 ### 404 route not found
 GET http://localhost:3000/abc_acd

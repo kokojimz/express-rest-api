@@ -1,33 +1,13 @@
-require('dotenv').config();
-
 const express = require('express');
 const app = express();
 const port = 3000;
-const mongoose = require('mongoose');
 const createError = require('http-errors');
-
-
-// Access variables
-const dbHost = process.env.DB_URL;
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-mongoose
-    .connect(dbHost,{
-        dbName: dbName,
-        user: dbUser,
-        pass: dbPassword,
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    }
-    )
-    .then(() => {
-        console.log('Mongodb connected...');
-});
+//Initialize DB
+require('./initDB')();
 
 //test
 app.all('/test',(req,res) => {
